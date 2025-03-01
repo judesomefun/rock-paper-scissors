@@ -15,8 +15,6 @@ function getComputerChoice(){
   }
 };
 
-
-
 function getHumanChoice(){
  humanChoice = prompt("Choose rock, paper, or scissors!");
  humanChoice = humanChoice.toLowerCase();
@@ -32,28 +30,22 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice){
-   const computerChoice = getComputerChoice();
-   const humanChoice = getHumanChoice().toLowerCase;
+   let computerChoice = getComputerChoice();
+   let humanChoice = getHumanChoice().toLowerCase;
 
    if (humanChoice === computerChoice) {
-   console.log("It's a draw. Try again!)")
-   } else if ((humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Rock" && computerChoice == "Scissors") || (humanChoice == "Scissors" && computerChoice == "Paper")){
+   console.log("It's a draw. Try again!")
+   } else if ((humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice == 'scissors' && computerChoice == 'paper')){
     humanScore++;
     console.log ('You win! ' + humanChoice + 'beats ' + computerChoice + '.');
-  }
-   else if ((humanChoice == "Rock" && computerChoice == "Paper") || (humanChoice == "Scissors" && computerChoice == "Rock") + (humanChoice == "Paper" && computerChoice == "Scissors")) {
+  } else if ((humanChoice == "Rock" && computerChoice == "Paper") || (humanChoice == "Scissors" && computerChoice == "Rock") + (humanChoice == "Paper" && computerChoice == "Scissors")) {
     computerScore++;
     console.log ('You lose! ' + computerChoice + 'beats ' + humanChoice + ' .');
-  }
+  } else console.log ('Choose again:' + humanChoice + computerChoice);
 }
   
 
-
-
-
-playGame(humanSelection, computerSelection);
-
-function playGame(humanSelection, computerSelection) {
+function playGame(playRound) {
     for (let i = 0; i < 5; i++) {
       let humanSelection = getHumanChoice();
       let computerSelection = getComputerChoice();
@@ -63,7 +55,7 @@ function playGame(humanSelection, computerSelection) {
       } else if (humanScore < computerScore){
         return 'You lose';
       }
-      else return 'It\'s a tie';
+      else return 'It\'s a tie!';
     }
 };
  
